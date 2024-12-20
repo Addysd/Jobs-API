@@ -1,8 +1,6 @@
 # Job API Application 🛠️
 A robust API for managing job listings, with a focus on security, scalability, and user authentication.
 
----
-
 ## Setup ⚙️
 
 1. **Install Dependencies**  
@@ -54,8 +52,6 @@ A robust API for managing job listings, with a focus on security, scalability, a
 - **cors**: Enables cross-origin resource sharing.  
 - **xss-clean**: Prevents cross-site scripting attacks.  
 - **express-rate-limit**: Limits the number of requests to prevent abuse.
-
----
 
 ## Swagger UI 📜
 
