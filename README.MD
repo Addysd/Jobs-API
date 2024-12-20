@@ -1,69 +1,62 @@
-#### Setup
+# Job API Application 🛠️
+A robust API for managing job listings, with a focus on security, scalability, and user authentication.
 
-```bash
-npm install && npm start
-```
+---
 
-#### Database Connection
+## Setup ⚙️
 
-1. Import connect.js
-2. Invoke in start()
-3. Setup .env in the root
-4. Add MONGO_URI with correct value
+1. **Install Dependencies**  
+   ```bash
+   npm install
+   ```
 
-#### Routers
+2. **Start the Application**  
+   ```bash
+   npm start
+   ```
 
-- auth.js
-- jobs.js
+3. **Database Connection**     
+   - Create a `.env` file in the root directory and add the `MONGO_URI` variable with your MongoDB connection string.
 
-#### User Model
+---
 
-Email Validation Regex
+## Routers 🛣️
 
-```regex
-/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-```
+- **auth.js**: Handles user authentication, including registration and login.  
+- **jobs.js**: Handles job-related operations such as creating, updating, and deleting job listings.
 
-#### Register User
+---
 
-- Validate - name, email, password - with Mongoose
-- Hash Password (with bcryptjs)
-- Save User
-- Generate Token
-- Send Response with Token
+## User Model 👤
 
-#### Login User
+### Register User
+- Validate `name`, `email`, and `password` using Mongoose.  
+- Hash the password using `bcryptjs`.  
 
-- Validate - email, password - in controller
-- If email or password is missing, throw BadRequestError
-- Find User
-- Compare Passwords
-- If no user or password does not match, throw UnauthenticatedError
-- If correct, generate Token
-- Send Response with Token
+### Login User 
+- Find the user in the database.  
+- Compare passwords using `bcryptjs`.  
+- If credentials are correct, generate a token.  
 
-#### Mongoose Errors
+---
 
-- Validation Errors
-- Duplicate (Email)
-- Cast Error
+## Mongoose Errors ⚠️
 
-#### Security
+- **Validation Errors**: Ensure all required fields meet validation rules.
+- **Duplicate (Email)**: Handle unique constraints for email.
+- **Cast Error**: Handle invalid IDs or malformed requests.
 
-- helmet
-- cors
-- xss-clean
-- express-rate-limit
+---
 
-Swagger UI
+## Security 🔒
 
-```yaml
-/jobs/{id}:
-  parameters:
-    - in: path
-      name: id
-      schema:
-        type: string
-      required: true
-      description: the job id
-```
+- **helmet**: Adds security-related HTTP headers.  
+- **cors**: Enables cross-origin resource sharing.  
+- **xss-clean**: Prevents cross-site scripting attacks.  
+- **express-rate-limit**: Limits the number of requests to prevent abuse.
+
+---
+
+## Swagger UI 📜
+
+Interactive API documentation available at `/api-docs`.  
