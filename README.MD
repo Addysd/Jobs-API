@@ -16,14 +16,10 @@ A robust API for managing job listings, with a focus on security, scalability, a
 3. **Database Connection**     
    - Create a `.env` file in the root directory and add the `MONGO_URI` variable with your MongoDB connection string.
 
----
-
 ## Routers 🛣️
 
 - **auth.js**: Handles user authentication, including registration and login.  
 - **jobs.js**: Handles job-related operations such as creating, updating, and deleting job listings.
-
----
 
 ## User Model 👤
 
@@ -36,15 +32,11 @@ A robust API for managing job listings, with a focus on security, scalability, a
 - Compare passwords using `bcryptjs`.  
 - If credentials are correct, generate a token.  
 
----
-
 ## Mongoose Errors ⚠️
 
 - **Validation Errors**: Ensure all required fields meet validation rules.
 - **Duplicate (Email)**: Handle unique constraints for email.
 - **Cast Error**: Handle invalid IDs or malformed requests.
-
----
 
 ## Security 🔒
 
